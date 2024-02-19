@@ -1,7 +1,7 @@
 import sqlite3
 
 def create_users_table(cursor):
-    cursor.execute('''CREATE TABLE IF NOT EXISTS users 
+    cursor.execute('''CREATE TABLE IF NOT EXISTS users
                     (email TEXT PRIMARY KEY, password TEXT, logged_in INTEGER DEFAULT 0)''')
 
 def insert_user(cursor, email, password):
