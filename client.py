@@ -82,8 +82,8 @@ import ssl
 
 SERVER_HOST = '127.0.0.1'
 SERVER_PORT = 5000
-CERTFILE = 'Email-Systems\cert.pem'  # Path to your client certificate
-KEYFILE = 'Email-Systems\key.pem'    # Path to your client private key
+CERTFILE = 'D:\Programming files\MinGW\Sem-4\Email-Systems\cert.pem'  # Path to your client certificate
+KEYFILE = 'D:\Programming files\MinGW\Sem-4\Email-Systems\key.pem'    # Path to your client private key
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client_socket.connect((SERVER_HOST, SERVER_PORT))

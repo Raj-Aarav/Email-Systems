@@ -73,7 +73,7 @@ def main():
     ssl_context = ssl.create_default_context(ssl.Purpose.SERVER_AUTH)
 
     # Load SSL certificate and private key
-    ssl_context.load_cert_chain(certfile='Email-Systems\cert.pem', keyfile='Email-Systems\key.pem')
+    ssl_context.load_cert_chain(certfile='D:\Programming files\MinGW\Sem-4\Email-Systems\cert.pem', keyfile='D:\Programming files\MinGW\Sem-4\Email-Systems\key.pem')
 
     # Connect to SQLite database with SSL
     conn = ssl.wrap_socket(socket.socket(socket.AF_INET, socket.SOCK_STREAM), ssl_version=ssl.PROTOCOL_TLS, cert_reqs=ssl.CERT_NONE)
