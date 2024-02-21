@@ -178,7 +178,6 @@ def display_users(cursor):
     for user in users:
         login_status = "Logged in" if user[1] == 1 else "Logged out"
         print(f"Email: {user[0]}, Status: {login_status}")
-
 def main():
     # Create SSL context
     ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
@@ -188,8 +187,11 @@ def main():
     ssl_context.verify_mode = ssl.CERT_NONE
 
     # Connect to server with SSL
-    with socket.create_connection(('192.168.143.8', 5000)) as sock:
-        with ssl_context.wrap_socket(sock, server_hostname='192.168.143.8') as ssock:
+    server_ip = '127.0.0.1'  # Replace this with the actual IP address of the server
+    server_port = 5000  # Replace this with the actual port of the server
+
+    with socket.create_connection((server_ip, server_port)) as sock:
+        with ssl_context.wrap_socket(sock, server_hostname=server_ip) as ssock:
             cursor = ssock.makefile('rwb')
             cursor = sqlite3.connect('users.db').cursor()
 
