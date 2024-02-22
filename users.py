@@ -158,9 +158,11 @@ import sqlite3
 import ssl
 import socket
 
-def create_users_table(cursor):
+def create_tables(cursor):
     cursor.execute('''CREATE TABLE IF NOT EXISTS users
                     (email TEXT PRIMARY KEY, password TEXT, logged_in INTEGER DEFAULT 0)''')
+    cursor.execute('''CREATE TABLE IF NOT EXISTS emails
+                    (id INTEGER PRIMARY KEY AUTOINCREMENT, sender TEXT, recipient TEXT, subject TEXT, body TEXT)''')
 
 def insert_user(cursor, email, password):
     try:
@@ -187,7 +189,7 @@ def main():
     ssl_context.verify_mode = ssl.CERT_NONE
 
     # Connect to server with SSL
-    server_ip = '127.0.0.1'  # Replace this with the actual IP address of the server
+    server_ip = '192.168.143.8'  # Replace this with the actual IP address of the server
     server_port = 5000  # Replace this with the actual port of the server
 
     with socket.create_connection((server_ip, server_port)) as sock:
