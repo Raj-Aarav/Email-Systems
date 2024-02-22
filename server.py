@@ -323,7 +323,7 @@ import sqlite3
 import signal
 import sys
 
-SERVER_HOST = '127.0.0.1'
+SERVER_HOST = '192.168.143.8'
 SERVER_PORT = 5000
 CERTFILE = 'D:/Programming files/MinGW/Sem-4/Email-Systems/cert.pem'
 KEYFILE = 'D:/Programming files/MinGW/Sem-4/Email-Systems/key.pem'
